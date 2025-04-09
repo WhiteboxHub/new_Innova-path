@@ -1,13 +1,13 @@
 <div align="center">
 
-<img src="https://innova-path.com/logo.png" alt="Innova-path Logo" width="120"/>
+<img src="public/images/logo/IP_logo.png" alt="Innova-path Logo" width="300"/>
 
 # 🚀 Innova-path
 
 **From training models to scaling enterprises — we support the full AI value chain.**
 Automate data entry, clean datasets, enable chain-of-thought reasoning, and run custom evaluations — all in one streamlined B2B AI platform.
 
-[🌐 Website](https://innova-path.com) • [📦 GitHub](https://github.com/WhiteboxHub/new_Innova-path.git)
+[🌐 Website](http://innova-path.com) • [📦 GitHub](https://github.com/WhiteboxHub/new_Innova-path.git)
 
 </div>
 
@@ -88,10 +88,10 @@ This project is optimized for deployment on **Vercel** but can also be deployed 
 Have questions, feedback, or partnership inquiries?
 
 📧 **contact@innova-path.com**
-🌐 **[Innova-path.com](https://innova-path.com)**
+🌐 **[Innova-path.com](http://innova-path.com)**
 
 ---
 
 ## 📝 License
 
-MIT License © 2025 [Innova-path](https://innova-path.com)
+MIT License © 2025 [Innova-path](http://innova-path.com)
