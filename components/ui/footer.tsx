@@ -180,9 +180,9 @@ import Logo from './logo';
       {/* New Content Block */}
       <div className="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto text-left">
-          <h2 className="text-3xl font-bold mb-4">Fast-track your strategic vision</h2>
+          <h2 className="text-3xl font-bold mb-4">Accelerate Your AI-Driven Transformation</h2>
           <p className="text-lg mb-10">
-            Speak to our team to learn how to unlock game-changing efficiency, scale, and growth opportunities.
+            Connect with our team to discover how AI and machine learning can unlock transformative efficiency, intelligent scalability, and new growth opportunities for your organization.
           </p>
           {/* Updated Link for Request a Demo */}
           <Link

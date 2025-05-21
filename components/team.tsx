@@ -33,11 +33,10 @@ export default function Team() {
     {/* Core Beliefs */}
     <div className="border border-gray-300 rounded-xl p-6 h-full transition duration-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-200">
       <h3 className="text-2xl sm:text-3xl font-playfair-display font-semibold mb-4">Core Beliefs</h3>
-      <ul className="text-base sm:text-lg text-slate-600 space-y-2 list-disc list-inside">
-        <li>AI should augment, not replace, human potential.</li>
-        <li>Insight must be explainable, actionable, and contextual.</li>
-        <li>Enterprise AI should be secure, scalable, and human-centric.</li>
-      </ul>
+      <p className="text-base sm:text-lg text-slate-600">
+        AI should enhance human potential not replace it. The insights it provides must be easy to understand, useful in real situations, and relevant to the context. For enterprises, AI must also be secure, scalable, and always designed with people at the center.
+      </p>
+      
     </div>
 
     {/* Our Team */}
