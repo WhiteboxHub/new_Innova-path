@@ -79,7 +79,7 @@ export default function RequestDemo() {
                 </div>
                 <div className="mt-5">
                   <label className="flex items-start">
-                    <input type="checkbox" className="form-checkbox mt-0.5" defaultChecked />
+                    <input type="checkbox" className="form-checkbox mt-0.5" required />
                     <span className="text-sm text-slate-500 ml-3">By filling out this form, I consent to the collection and use of my personal data.</span>
                   </label>
                 </div>
@@ -92,7 +92,8 @@ export default function RequestDemo() {
       </div>
 
       {/* Right side */}
-      <div   className="relative hidden md:block md:w-1/2 bg-gradient-to-br from-slate-900 via-slate-700 to-slate-950"aria-hidden="true">
+      <div   className="relative hidden md:block md:w-1/2 bg-slate-950"aria-hidden="true">
+      {/* <div   className="relative hidden md:block md:w-1/2 bg-gradient-to-br from-slate-950 to-slate-950"aria-hidden="true"> */}
         <div className="min-h-screen h-full flex flex-col justify-center px-6 sm:px-10">
           <div className="max-w-lg mx-auto text-slate-100 space-y-8">
             <h2 className="text-3xl md:text-4xl font-bold font-playfair-display">Request a demo</h2>

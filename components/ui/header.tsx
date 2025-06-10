@@ -210,16 +210,16 @@
 import Link from 'next/link';
 import Logo from './logo';
 import Dropdown from '@/components/utils/dropdown';
-import MobileMenu from './mobile-menu';
+// import MobileMenu from './mobile-menu';
 
 export default function Header({ mode = 'dark' }: { mode?: string }) {
   return (
     <header className={`absolute w-full z-30 ${mode !== 'light' && 'dark'}`}>
       <div className="max-w-7xl mx-auto px-5 sm:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between ml-10 h-16 md:h-20">
 
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center ">
             <Logo />
           </div>
 
@@ -253,7 +253,7 @@ export default function Header({ mode = 'dark' }: { mode?: string }) {
 
           {/* Mobile Menu (card style) */}
           <div className="md:hidden">
-            <MobileMenu />
+            {/* <MobileMenu /> */}
           </div>
         </div>
       </div>

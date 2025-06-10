@@ -368,23 +368,23 @@ export default function Footer() {
 
             {/* Left: Logo + Name + Social Icons */}
             <div className="flex flex-col items-start">
-              <div className="mb-1 -mt-20">
+              <div className="mb-1 -mt-10 -ml-3.5">
                 <Logo />
               </div>
-              <div className="text-md font-semibold text-white -mt-3 ml-6 mb-4">
+              <div className="text-md font-semibold text-white -mt-3 ml-3 mb-4">
                 Innovapath Inc.
               </div>
 
               {/* Social Icons under Innovapath Inc. */}
-              <div className="flex space-x-6 ml-2">
+              <div className="flex space-x-4 ">
                 <a
-                  href="https://www.facebook.com/profile.php?id=100076790355187"
+                  href="https://www.facebook.com/innovapathitconsulting"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Facebook"
                   className="text-gray-400 hover:text-blue-600 transition duration-300"
                 >
-                  <svg
+                  <svg 
                     width="30"
                     height="30"
                     className="fill-current p-1"
@@ -411,7 +411,7 @@ export default function Footer() {
                   </svg>
                 </a>
                 <a
-                  href="https://www.linkedin.com/company/whitebox-learning/about/"
+                  href="https://www.linkedin.com/company/innovapath-inc-/?trk=company_name"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LinkedIn"
