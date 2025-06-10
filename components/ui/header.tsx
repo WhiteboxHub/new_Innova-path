@@ -252,9 +252,9 @@ export default function Header({ mode = 'dark' }: { mode?: string }) {
           </div>
 
           {/* Mobile Menu (card style) */}
-          <div className="md:hidden">
+          {/* <div className="md:hidden">
             <MobileMenu />
-          </div>
+          </div> */}
         </div>
       </div>
     </header>
