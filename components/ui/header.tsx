@@ -230,11 +230,12 @@ export default function Header({ mode = 'dark' }: { mode?: string }) {
           {/* </div><div className="hidden md:flex items-center ml-auto space-x-4"> */}
 
 {/* Talent Showcase Dropdown */}
-<Dropdown title="Talent Showcase">
-  <Link href="/talent-showcase/search-candidates" className="text-sm text-gray-600 hover:text-blue-600 flex py-2 px-5 leading-tight">
+<Dropdown title={<span className="text-white text-xl font-bold">Talent Showcase</span>}
+        >
+  <Link href="/talent-showcase/search-candidates" className="text-sm text-black-800 hover:text-blue-600 flex py-2 px-5 leading-tight">
     Search Candidates
   </Link>
-  <Link href="/talent-showcase/request-talent" className="text-sm text-gray-600 hover:text-blue-600 flex py-2 px-5 leading-tight">
+  <Link href="/talent-showcase/request-talent" className="text-sm text-black-800 hover:text-blue-600 flex py-2 px-5 leading-tight">
     Request Talent
   </Link>
              </Dropdown>
