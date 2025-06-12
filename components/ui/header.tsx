@@ -225,6 +225,19 @@ export default function Header({ mode = 'dark' }: { mode?: string }) {
 
           {/* Desktop navigation + Request Demo aligned right */}
           <div className="hidden md:flex items-center ml-auto space-x-4">
+
+
+          {/* </div><div className="hidden md:flex items-center ml-auto space-x-4"> */}
+
+{/* Talent Showcase Dropdown */}
+<Dropdown title="Talent Showcase">
+  <Link href="/talent-showcase/search-candidates" className="text-sm text-gray-600 hover:text-blue-600 flex py-2 px-5 leading-tight">
+    Search Candidates
+  </Link>
+  <Link href="/talent-showcase/request-talent" className="text-sm text-gray-600 hover:text-blue-600 flex py-2 px-5 leading-tight">
+    Request Talent
+  </Link>
+             </Dropdown>
             {/* <nav className="flex font-bold items-center space-x-2"> */}
               
 
@@ -240,6 +253,9 @@ export default function Header({ mode = 'dark' }: { mode?: string }) {
                 About
               </Link> */}
             {/* </nav> */}
+
+
+            
             <Link 
               className="btn text-sm text-white bg-blue-600 hover:bg-blue-700 px-3 py-2 rounded-xl w-full sm:w-auto group transition duration-150 ease-in-out text-center" 
               href="/request-demo"
