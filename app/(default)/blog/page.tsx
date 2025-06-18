@@ -6,7 +6,7 @@ import PostItem from '@/components/post-item'
 import CtaBox from '@/components/cta-box'
 
 export const metadata = {
-  title: 'Blog - Innovapath',
+  title: ' Innovapath',
   description: 'Page description',
 }
 

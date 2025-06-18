@@ -42,9 +42,7 @@
 //                   </div>
 //                   <div className="md:text-lg leading-tight font-semibold text-slate-800">MARKET PLACES</div>
 //                 </div>
-            
-            
-            
+
 //               </button>
 //               <button
 //                 className={`text-center transition-opacity ${tab !== 2 && 'opacity-50 hover:opacity-75'}`}
@@ -130,9 +128,6 @@
 //   )
 // }
 
-
-
-
 // ---------------------------------------------------------------------------------
 
 // 'use client'
@@ -172,7 +167,7 @@
 //               >
 //                 <div>
 //                   <div className="inline-flex bg-white rounded-full shadow-md mb-3 p-3">
-//                     {/* SVG icon */}
+//                     {/* SVG  */}
 //                     <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
 //                       <circle cx="28" cy="28" r="20" fill="#2174EA" />
 //                       <text x="28" y="32" fill="white" fontSize="16" fontWeight="bold" textAnchor="middle">
@@ -202,16 +197,16 @@
 //                   leaveFrom="opacity-100 translate-y-0"
 //                   leaveTo="opacity-0 translate-y-5"
 //                 >
-//                    <div>  
-//                   <FeatureCard 
+//                    <div>
+//                   <FeatureCard
 //                     category={feature.category}
 //                     title={feature.title}
 //                     description={feature.description}
 //                     bgColor={feature.bgColor}
 //                     width={feature.width}
 //                     />
-                    
-//                    </div> 
+
+//                    </div>
 //                 </Transition>
 //               ))}
 //             </div>
@@ -225,31 +220,34 @@
 
 // ************************
 
+"use client";
 
-'use client'
-
-import { useState } from 'react'
-import { Transition } from '@headlessui/react'
-import FeatureCard from '@/components/FeatureCard'
-import featureData from '@/components/data/featureData'
+import { useState } from "react";
+import { Transition } from "@headlessui/react";
+import FeatureCard from "@/components/FeatureCard";
+import featureData from "@/components/data/featureData";
 
 export default function FeaturesHome() {
-  const [tab, setTab] = useState<number>(1)
+  const [tab, setTab] = useState<number>(1);
 
   return (
     <section className="relative">
-      <div className="absolute inset-0 bg-slate-100 pointer-events-none mb-64 md:mb-80" aria-hidden="true"></div>
+      <div
+        className="absolute inset-0 bg-slate-100 pointer-events-none mb-64 md:mb-80"
+        aria-hidden="true"
+      ></div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div className="py-12 md:py-20">
-
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12">
             <h2 className="h2 font-playfair-display text-slate-800 mb-4">
-              Success stories with  companies like yours
+              Success stories with companies like yours
             </h2>
             <p className="text-xl text-slate-768">
-              Learn how  Innovapath has saved millions of hours and hundreds of millions of dollars, driving growth and innovation for clients across a range of industries and use cases.
+              Learn how Innovapath has saved millions of hours and hundreds of
+              millions of dollars, driving growth and innovation for clients
+              across a range of industries and use cases.
             </p>
           </div>
 
@@ -258,13 +256,15 @@ export default function FeaturesHome() {
             {featureData.map((feature, index) => (
               <button
                 key={feature.id}
-                className={`text-center transition-opacity ${tab !== index + 1 && 'opacity-50 hover:opacity-75'}`}
+                className={`text-center transition-opacity ${
+                  tab !== index + 1 && "opacity-50 hover:opacity-75"
+                }`}
                 onClick={() => setTab(index + 1)}
               >
                 <div>
-                <div className="inline-flex bg-white rounded-full shadow-md mb-3 p-3">
-                  <feature.icon className="w-6 h-6 text-[#2174EA]" />
-                </div>
+                  <div className="inline-flex bg-white rounded-full shadow-md mb-3 p-3">
+                    <feature.icon className="w-6 h-6 text-[#2174EA]" />
+                  </div>
 
                   <div className="md:text-m leading-tight font-semibold text-slate-800">
                     {feature.category}
@@ -302,13 +302,8 @@ export default function FeaturesHome() {
               ))}
             </div>
           </div>
-
         </div>
       </div>
     </section>
-  )
+  );
 }
-
-
-
-

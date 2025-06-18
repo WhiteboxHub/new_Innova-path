@@ -147,30 +147,326 @@
 // };
 
 // export default SearchCandidatesPage;
+// ======================================
+
+
+// 'use client';
+
+// import React, { useState } from 'react';
+// import Header from '@/components/ui/header'; // Update if path differs
+// import Footer from '@/components/ui/footer'; // Update if path differs
+
+// const dummyCandidates = [
+//   // {
+//   //   id: 1,
+//   //   name: 'John Doe',
+//   //   role: 'Data Scientist',
+//   //   experience: '5 years',
+//   //   location: 'Remote',
+//   //   availability: 'Immediately',
+//   //   skills: ['Python', 'TensorFlow'],
+//   // },
+//   {
+//     id: 2,
+//     name: 'Jane Smith',
+//     role: 'ML Engineer',
+//     experience: '3 years',
+//     location: 'Hybrid',
+//     availability: '1 month',
+//     skills: ['Kubernetes', 'React'],
+//   },
+// ];
+
+// export default function SearchCandidatesPage() {
+//   const [filters, setFilters] = useState({
+//     role: '',
+//     experience: '',
+//     location: '',
+//     availability: '',
+//     skills: '',
+//   });
+
+//   const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
+//     const { name, value } = e.target;
+//     setFilters((prev) => ({ ...prev, [name]: value }));
+//   };
+
+//   const filteredCandidates = dummyCandidates.filter((candidate) => {
+//     return (
+//       (filters.role === '' || candidate.role === filters.role) &&
+//       (filters.experience === '' || candidate.experience.includes(filters.experience)) &&
+//       (filters.location === '' || candidate.location === filters.location) &&
+//       (filters.availability === '' || candidate.availability.includes(filters.availability)) &&
+//       (filters.skills === '' || candidate.skills.includes(filters.skills))
+//     );
+//   });
+
+//   return (
+//     <div className="flex flex-col min-h-screen">
+//       {/* Header at top */}
+//       <Header />
+
+//       {/* Main section centered */}
+//       <main className="flex-grow flex items-center justify-center px-4 py-12 mt-10">
+//         <div className="max-w-5xl w-full">
+//           <h2 className="text-3xl font-semibold mb-6 text-center">Search Talent</h2>
+
+//           {/* Filters */}
+//           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+//             <select name="role" value={filters.role} onChange={handleChange} className="p-2 border rounded">
+//               <option value="">Select Role</option>
+//               <option value="Data Scientist">Data Scientist</option>
+//               <option value="ML Engineer">ML Engineer</option>
+//               <option value="Backend Developer">Backend Developer</option>
+//             </select>
+
+//             <select name="experience" value={filters.experience} onChange={handleChange} className="p-2 border rounded">
+//               <option value="">Experience</option>
+//               <option value="2">2+ yrs</option>
+//               <option value="5">5+ yrs</option>
+//               <option value="9">9+ yrs</option>
+//             </select>
+
+//             <select name="location" value={filters.location} onChange={handleChange} className="p-2 border rounded">
+//               <option value="">Location</option>
+//               <option value="Remote">Remote</option>
+//               <option value="Hybrid">Hybrid</option>
+//               <option value="Onsite">Onsite</option>
+//             </select>
+
+//             <select name="availability" value={filters.availability} onChange={handleChange} className="p-2 border rounded">
+//               <option value="">Availability</option>
+//               <option value="Immediately">Immediately</option>
+//               <option value="1 month">1 month</option>
+//               <option value="3 months">3 months</option>
+//             </select>
+
+//             <input
+//               type="text"
+//               name="skills"
+//               placeholder="Search Skill (e.g., Python)"
+//               value={filters.skills}
+//               onChange={handleChange}
+//               className="p-2 border rounded col-span-full sm:col-span-2"
+//             />
+//           </div>
+
+//           {/* Candidate Cards */}
+//           <div className="grid gap-6">
+//             {filteredCandidates.map((candidate) => (
+//               <div key={candidate.id} className="border rounded p-4 shadow-md">
+//                 <h3 className="text-xl font-bold">{candidate.name}</h3>
+//                 <p className="text-sm">Role: {candidate.role}</p>
+//                 <p className="text-sm">Experience: {candidate.experience}</p>
+//                 <p className="text-sm">Location: {candidate.location}</p>
+//                 <p className="text-sm">Availability: {candidate.availability}</p>
+//                 <p className="text-sm">Skills: {candidate.skills.join(', ')}</p>
+//                 <button className="mt-2 px-4 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">Contact</button>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </main>
+
+//       {/* Footer at bottom */}
+//       <Footer />
+//     </div>
+//   );
+// }
+
+
+
+
+
+// 'use client';
+
+// import React, { useState } from 'react';
+// import Header from '@/components/ui/header';
+// import Footer from '@/components/ui/footer';
+
+// const dummyCandidates = [
+//   {
+//     id: 1,
+//     name: 'Jane Smith',
+//     role: 'ML Engineer',
+//     experience: '3 years',
+//     location: 'Hybrid',
+//     availability: '1 month',
+//     skills: ['Kubernetes', 'React'],
+//   },
+//   {
+//     id: 2,
+//     name: 'John Doe',
+//     role: 'Data Scientist',
+//     experience: '5 years',
+//     location: 'Remote',
+//     availability: 'Immediately',
+//     skills: ['Python', 'TensorFlow'],
+//   },
+// ];
+
+// export default function SearchCandidatesPage() {
+//   const [filters, setFilters] = useState({
+//     role: '',
+//     experience: '',
+//     location: '',
+//     availability: '',
+//     skills: '',
+//   });
+
+//   const [showResults, setShowResults] = useState(false);
+
+//   const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
+//     const { name, value } = e.target;
+//     setFilters((prev) => ({ ...prev, [name]: value }));
+//   };
+
+//   // Normalize skill input into array (e.g., "React, Python")
+//   const parseSkills = (input: string) =>
+//     input
+//       .split(',')
+//       .map((s) => s.trim().toLowerCase())
+//       .filter((s) => s.length > 0);
+
+//   const filteredCandidates = dummyCandidates.filter((candidate) => {
+//     const candidateExperience = parseInt(candidate.experience);
+//     const filterExperience = parseInt(filters.experience);
+
+//     const skillMatches = parseSkills(filters.skills).every((skill) =>
+//       candidate.skills.some((s) => s.toLowerCase().includes(skill))
+//     );
+
+//     return (
+//       (filters.role === '' || candidate.role === filters.role) &&
+//       (filters.experience === '' || candidateExperience >= filterExperience) &&
+//       (filters.location === '' || candidate.location === filters.location) &&
+//       (filters.availability === '' || candidate.availability.includes(filters.availability)) &&
+//       (filters.skills === '' || skillMatches)
+//     );
+//   });
+
+//   return (
+//     <div className="flex flex-col min-h-screen">
+//       <Header />
+
+//       <main className="flex-grow flex items-center justify-center px-4 py-12 mt-10">
+//         <div className="max-w-5xl w-full">
+//           <h2 className="text-3xl font-semibold mb-6 text-center">Search Talent</h2>
+
+//           {/* Filters */}
+//           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+//             <select name="role" value={filters.role} onChange={handleChange} className="p-2 border rounded">
+//               <option value="">Select Role</option>
+//               <option value="ML Engineer">ML Engineer</option>
+//               <option value="MLOps Engineer">MLOps Engineer</option>
+//               <option value="Deep Learning Engineer">Deep Learning Engineer</option>
+//               <option value="AI/ML Engineer">AI/ML Engineer</option>
+//             </select>
+
+//             <select name="experience" value={filters.experience} onChange={handleChange} className="p-2 border rounded">
+//               <option value="">Experience</option>
+//               <option value="2">2+ yrs</option>
+//               <option value="5">5+ yrs</option>
+//               <option value="9">9+ yrs</option>
+//             </select>
+
+//             <select name="location" value={filters.location} onChange={handleChange} className="p-2 border rounded">
+//               <option value="">Location</option>
+//               <option value="Remote">Remote</option>
+//               <option value="Hybrid">Hybrid</option>
+//               <option value="Onsite">Onsite</option>
+//             </select>
+
+//             <select
+//               name="availability"
+//               value={filters.availability}
+//               onChange={handleChange}
+//               className="p-2 border rounded"
+//             >
+//               <option value="">Availability</option>
+//               <option value="Immediately">Immediately</option>
+//               <option value="1 month">1 month</option>
+//               <option value="3 months">3 months</option>
+//             </select>
+
+//             <input
+//               type="text"
+//               name="skills"
+//               placeholder="Search Skill (e.g., Python, React)"
+//               value={filters.skills}
+//               onChange={handleChange}
+//               className="p-2 border rounded col-span-full sm:col-span-2"
+//             />
+//           </div>
+
+//           {/* Request Profile Button */}
+//           <div className="flex justify-center mb-8">
+//             <button
+//               className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+//               onClick={() => setShowResults(true)}
+//             >
+//               Request Profiles
+//             </button>
+//           </div>
+
+//           {/* Candidate Cards */}
+//           {showResults && (
+//             <div className="grid gap-6">
+//               {filteredCandidates.length > 0 ? (
+//                 filteredCandidates.map((candidate) => (
+//                   <div key={candidate.id} className="border rounded p-4 shadow-md">
+//                     <h3 className="text-xl font-bold">{candidate.name}</h3>
+//                     <p className="text-sm">Role: {candidate.role}</p>
+//                     <p className="text-sm">Experience: {candidate.experience}</p>
+//                     <p className="text-sm">Location: {candidate.location}</p>
+//                     <p className="text-sm">Availability: {candidate.availability}</p>
+//                     <p className="text-sm">Skills: {candidate.skills.join(', ')}</p>
+//                     <button className="mt-2 px-4 py-1 bg-green-600 text-white rounded hover:bg-green-700">
+//                       Contact
+//                     </button>
+//                   </div>
+//                 ))
+//               ) : (
+//                 <p className="text-center text-gray-500">No candidates found.</p>
+//               )}
+//             </div>
+//           )}
+//         </div>
+//       </main>
+
+//       <Footer />
+//     </div>
+//   );
+// }
+
+
+
+
+
 'use client';
 
 import React, { useState } from 'react';
-import Header from '@/components/ui/header'; // Update if path differs
-import Footer from '@/components/ui/footer'; // Update if path differs
+import Header from '@/components/ui/header';
+import Footer from '@/components/ui/footer';
 
 const dummyCandidates = [
-  // {
-  //   id: 1,
-  //   name: 'John Doe',
-  //   role: 'Data Scientist',
-  //   experience: '5 years',
-  //   location: 'Remote',
-  //   availability: 'Immediately',
-  //   skills: ['Python', 'TensorFlow'],
-  // },
   {
-    id: 2,
+    id: 1,
     name: 'Jane Smith',
     role: 'ML Engineer',
     experience: '3 years',
     location: 'Hybrid',
     availability: '1 month',
     skills: ['Kubernetes', 'React'],
+  },
+  {
+    id: 2,
+    name: 'John Doe',
+    role: 'Data Scientist',
+    experience: '5 years',
+    location: 'Remote',
+    availability: 'Immediately',
+    skills: ['Python', 'TensorFlow'],
   },
 ];
 
@@ -183,38 +479,56 @@ export default function SearchCandidatesPage() {
     skills: '',
   });
 
+  const [showResults, setShowResults] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
     const { name, value } = e.target;
     setFilters((prev) => ({ ...prev, [name]: value }));
   };
 
+  const parseSkills = (input: string) =>
+    input
+      .split(',')
+      .map((s) => s.trim().toLowerCase())
+      .filter((s) => s.length > 0);
+
   const filteredCandidates = dummyCandidates.filter((candidate) => {
+    const candidateExperience = parseInt(candidate.experience);
+    const filterExperience = parseInt(filters.experience);
+
+    const skillMatches = parseSkills(filters.skills).every((skill) =>
+      candidate.skills.some((s) => s.toLowerCase().includes(skill))
+    );
+
     return (
       (filters.role === '' || candidate.role === filters.role) &&
-      (filters.experience === '' || candidate.experience.includes(filters.experience)) &&
+      (filters.experience === '' || candidateExperience >= filterExperience) &&
       (filters.location === '' || candidate.location === filters.location) &&
       (filters.availability === '' || candidate.availability.includes(filters.availability)) &&
-      (filters.skills === '' || candidate.skills.includes(filters.skills))
+      (filters.skills === '' || skillMatches)
     );
   });
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Header at top */}
-      <Header />
+      
+      {/* 🛠️ Wrap header with dark background */}
+      <div className="bg-slate-900">
+        <Header />
+      </div>
 
-      {/* Main section centered */}
-      <main className="flex-grow flex items-center justify-center px-4 py-12">
+      <main className="flex-grow flex items-center justify-center px-4 py-12 mt-10">
         <div className="max-w-5xl w-full">
-          <h2 className="text-3xl font-semibold mb-6 text-center">Search Candidates</h2>
+          <h2 className="text-3xl font-semibold mb-6 text-center">Search Talent</h2>
 
           {/* Filters */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
             <select name="role" value={filters.role} onChange={handleChange} className="p-2 border rounded">
               <option value="">Select Role</option>
-              <option value="Data Scientist">Data Scientist</option>
               <option value="ML Engineer">ML Engineer</option>
-              <option value="Backend Developer">Backend Developer</option>
+              <option value="MLOps Engineer">MLOps Engineer</option>
+              <option value="Deep Learning Engineer">Deep Learning Engineer</option>
+              <option value="AI/ML Engineer">AI/ML Engineer</option>
             </select>
 
             <select name="experience" value={filters.experience} onChange={handleChange} className="p-2 border rounded">
@@ -231,7 +545,12 @@ export default function SearchCandidatesPage() {
               <option value="Onsite">Onsite</option>
             </select>
 
-            <select name="availability" value={filters.availability} onChange={handleChange} className="p-2 border rounded">
+            <select
+              name="availability"
+              value={filters.availability}
+              onChange={handleChange}
+              className="p-2 border rounded"
+            >
               <option value="">Availability</option>
               <option value="Immediately">Immediately</option>
               <option value="1 month">1 month</option>
@@ -241,31 +560,48 @@ export default function SearchCandidatesPage() {
             <input
               type="text"
               name="skills"
-              placeholder="Search Skill (e.g., Python)"
+              placeholder="Search Skill (e.g., Python, React)"
               value={filters.skills}
               onChange={handleChange}
               className="p-2 border rounded col-span-full sm:col-span-2"
             />
           </div>
 
-          {/* Candidate Cards */}
-          <div className="grid gap-6">
-            {filteredCandidates.map((candidate) => (
-              <div key={candidate.id} className="border rounded p-4 shadow-md">
-                <h3 className="text-xl font-bold">{candidate.name}</h3>
-                <p className="text-sm">Role: {candidate.role}</p>
-                <p className="text-sm">Experience: {candidate.experience}</p>
-                <p className="text-sm">Location: {candidate.location}</p>
-                <p className="text-sm">Availability: {candidate.availability}</p>
-                <p className="text-sm">Skills: {candidate.skills.join(', ')}</p>
-                <button className="mt-2 px-4 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">Contact</button>
-              </div>
-            ))}
+          {/* Request Profile Button */}
+          <div className="flex justify-center mb-8">
+            <button
+              className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+              onClick={() => setShowResults(true)}
+            >
+              Request Profiles
+            </button>
           </div>
+
+          {/* Candidate Cards */}
+          {showResults && (
+            <div className="grid gap-6">
+              {filteredCandidates.length > 0 ? (
+                filteredCandidates.map((candidate) => (
+                  <div key={candidate.id} className="border rounded p-4 shadow-md">
+                    <h3 className="text-xl font-bold">{candidate.name}</h3>
+                    <p className="text-sm">Role: {candidate.role}</p>
+                    <p className="text-sm">Experience: {candidate.experience}</p>
+                    <p className="text-sm">Location: {candidate.location}</p>
+                    <p className="text-sm">Availability: {candidate.availability}</p>
+                    <p className="text-sm">Skills: {candidate.skills.join(', ')}</p>
+                    <button className="mt-2 px-4 py-1 bg-green-600 text-white rounded hover:bg-green-700">
+                      Contact
+                    </button>
+                  </div>
+                ))
+              ) : (
+                <p className="text-center text-gray-500">No candidates found.</p>
+              )}
+            </div>
+          )}
         </div>
       </main>
 
-      {/* Footer at bottom */}
       <Footer />
     </div>
   );

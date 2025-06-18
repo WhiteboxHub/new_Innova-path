@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Home - Innovapath',
+  title: ' Innovapath',
   description: 'Page description',
 }
 

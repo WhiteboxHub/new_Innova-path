@@ -97,11 +97,11 @@ import React, { useState } from "react";
 import Header from "@/components/ui/header"; // Adjust path as needed
 import Footer from "@/components/ui/footer"; // Adjust path as needed
 
-const roles = ['Data Scientist', 'ML Engineer', 'Backend Developer'];
+const roles = ['ML Engineer', 'AI/ML Engineer','Deep Learning Engineer','MLOps Engineer'];
 const experience = ['2–4 yrs', '5–8 yrs', '9+ yrs'];
 const locations = ['Remote', 'Hybrid', 'Onsite'];
 const availability = ['Immediately', '1 month', '3 months'];
-const allSkills = ['Python', 'TensorFlow', 'Kubernetes', 'SQL', 'React'];
+const allSkills = ['Python', 'TensorFlow', 'Kubernetes', 'NLP', 'Generative AI','Rag & Agent'];
 
 export default function RequestTalentPage() {
   const [formData, setFormData] = useState({
@@ -126,11 +126,35 @@ export default function RequestTalentPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   console.log('Request Talent Submitted:', formData);
+  //   // You can POST this data to your backend
+  // };
+
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Request Talent Submitted:', formData);
-    // You can POST this data to your backend
+
+    try {
+      const response = await fetch('http://localhost:8000/api/request-talent', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      console.log('Server response:', result);
+      alert(result.message);
+    } catch (error) {
+      console.error('Error submitting request:', error);
+      alert('Something went wrong!');
+    }
   };
+
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -138,7 +162,7 @@ export default function RequestTalentPage() {
       <Header />
 
       {/* Main content in the center */}
-      <main className="flex-grow px-4 py-12 max-w-3xl mx-auto w-full">
+      <main className="flex-grow px-4 py-12 max-w-3xl mx-auto w-full mt-9">
         <h2 className="text-3xl font-semibold mb-6 text-center">Request Talent</h2>
         <form onSubmit={handleSubmit} className="space-y-5">
           <select name="role" value={formData.role} onChange={handleChange} className="w-full p-2 border rounded">

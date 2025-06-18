@@ -152,15 +152,110 @@
 
 
 
+// 'use client';
+
+// import { useEffect, useRef, useState } from 'react';
+// import Link from 'next/link';
+// import { Menu, X } from 'lucide-react';
+// import { Transition } from '@headlessui/react';
+
+// export default function MobileMenu() {
+//   const [open, setOpen] = useState(false);
+//   const triggerRef = useRef<HTMLButtonElement>(null);
+//   const menuRef = useRef<HTMLDivElement>(null);
+
+//   // Close menu on outside click
+//   useEffect(() => {
+//     const handleClickOutside = (e: MouseEvent) => {
+//       if (
+//         !open ||
+//         menuRef.current?.contains(e.target as Node) ||
+//         triggerRef.current?.contains(e.target as Node)
+//       ) {
+//         return;
+//       }
+//       setOpen(false);
+//     };
+//     document.addEventListener('click', handleClickOutside);
+//     return () => document.removeEventListener('click', handleClickOutside);
+//   }, [open]);
+
+//   // Close menu on ESC key
+//   useEffect(() => {
+//     const handleEsc = (e: KeyboardEvent) => {
+//       if (e.key === 'Escape') setOpen(false);
+//     };
+//     document.addEventListener('keydown', handleEsc);
+//     return () => document.removeEventListener('keydown', handleEsc);
+//   }, []);
+
+//   return (
+//     <div className="relative md:hidden z-50">
+//       <button
+//         ref={triggerRef}
+//         className="text-gray-800 dark:text-white focus:outline-none"
+//         onClick={() => setOpen(!open)}
+//         aria-label="Toggle menu"
+//       >
+//         {open ? <X size={28} /> : <Menu size={28} />}
+//       </button>
+
+//       <Transition
+//         show={open}
+//         enter="transition duration-200 ease-out"
+//         enterFrom="opacity-0 -translate-y-2"
+//         enterTo="opacity-100 translate-y-0"
+//         leave="transition duration-150 ease-in"
+//         leaveFrom="opacity-100 translate-y-0"
+//         leaveTo="opacity-0 -translate-y-2"
+//       >
+//         <div
+//           ref={menuRef}
+//           className="absolute right-0 mt-4 w-64 bg-white shadow-xl rounded-xl py-6 px-5 z-50 flex flex-col space-y-4"
+//         >
+//           {/* <Link href="/pricing" className="font-medium text-gray-800 hover:text-blue-600">
+//             For foundation models
+//           </Link>
+//           <Link href="/blog" className="font-medium text-gray-800 hover:text-blue-600">
+//             For enterprises
+//           </Link>
+//           <Link href="/404" className="font-medium text-gray-800 hover:text-blue-600">
+//             404
+//           </Link>
+//           <Link href="/support" className="font-medium text-gray-800 hover:text-blue-600">
+//             Support
+//           </Link>
+//           <Link href="/about" className="font-medium text-gray-800 hover:text-blue-600">
+//             About
+//           </Link>
+//           <Link href="/signin" className="font-medium text-gray-800 hover:text-blue-600">
+//             Become a trainer
+//           </Link> */}
+//           <Link
+//             href="/request-demo"
+//             className="text-white bg-blue-600 hover:bg-blue-700 text-center px-4 py-2 rounded-xl font-medium"
+//           >
+//             Request Demo
+//           </Link>
+//         </div>
+//       </Transition>
+//     </div>
+//   );
+// }
+
+
+
+
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 import { Transition } from '@headlessui/react';
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
+  const [showcaseOpen, setShowcaseOpen] = useState(false); // 👈 for dropdown
   const triggerRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -213,24 +308,42 @@ export default function MobileMenu() {
           ref={menuRef}
           className="absolute right-0 mt-4 w-64 bg-white shadow-xl rounded-xl py-6 px-5 z-50 flex flex-col space-y-4"
         >
-          <Link href="/pricing" className="font-medium text-gray-800 hover:text-blue-600">
-            For foundation models
-          </Link>
-          <Link href="/blog" className="font-medium text-gray-800 hover:text-blue-600">
-            For enterprises
-          </Link>
-          <Link href="/404" className="font-medium text-gray-800 hover:text-blue-600">
-            404
-          </Link>
-          <Link href="/support" className="font-medium text-gray-800 hover:text-blue-600">
-            Support
-          </Link>
-          <Link href="/about" className="font-medium text-gray-800 hover:text-blue-600">
-            About
-          </Link>
-          <Link href="/signin" className="font-medium text-gray-800 hover:text-blue-600">
-            Become a trainer
-          </Link>
+
+          {/* Talent Showcase Dropdown */}
+          <button
+            onClick={() => setShowcaseOpen(!showcaseOpen)}
+            className="flex items-center justify-between text-gray-800 font-medium w-full focus:outline-none"
+          >
+            <span>Talent Showcase</span>
+            {showcaseOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+          </button>
+
+          <Transition
+            show={showcaseOpen}
+            enter="transition duration-200 ease-out"
+            enterFrom="opacity-0 max-h-0"
+            enterTo="opacity-100 max-h-screen"
+            leave="transition duration-150 ease-in"
+            leaveFrom="opacity-100 max-h-screen"
+            leaveTo="opacity-0 max-h-0"
+          >
+            <div className="pl-4 flex flex-col space-y-2 mt-2">
+              <Link
+                href="/talent-showcase/search-candidates"
+                className="text-gray-700 text-sm hover:text-blue-600"
+              >
+                Search Talent
+              </Link>
+              <Link
+                href="/talent-showcase/request-talent"
+                className="text-gray-700 text-sm hover:text-blue-600"
+              >
+                Request Talent
+              </Link>
+            </div>
+          </Transition>
+
+          {/* Request Demo */}
           <Link
             href="/request-demo"
             className="text-white bg-blue-600 hover:bg-blue-700 text-center px-4 py-2 rounded-xl font-medium"

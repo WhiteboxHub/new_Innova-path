@@ -98,8 +98,10 @@ import { CheckCircleIcon, CpuChipIcon, Cog6ToothIcon, SparklesIcon, ChartBarIcon
 
 export default function IntelligentAutomation() {
   return (
-    <section className="bg-gradient-to-b from-slate-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 md:py-24">
+    <section className="bg-gradient-to-b from-slate-30 to-white  py-0.5 mb-0.5 mb-[-200px] mt-[-90px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-16 md:py-24 ">
+      {/* <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24"> */}
+
         <div className="flex flex-col md:flex-row items-center md:space-x-12 lg:space-x-20">
 
           {/* Left Card */}
