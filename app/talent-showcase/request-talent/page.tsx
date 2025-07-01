@@ -162,7 +162,7 @@ export default function RequestTalentPage() {
       <Header />
 
       {/* Main content in the center */}
-      <main className="flex-grow px-4 py-12 max-w-3xl mx-auto w-full mt-9">
+      <main className="flex-grow px-4 py-20 max-w-3xl mx-auto w-full mt-9">
         <h2 className="text-3xl font-semibold mb-6 text-center">Request Talent</h2>
         <form onSubmit={handleSubmit} className="space-y-5">
           <select name="role" value={formData.role} onChange={handleChange} className="w-full p-2 border rounded">
@@ -209,7 +209,7 @@ export default function RequestTalentPage() {
             </div>
           </div>
 
-          <button type="submit" className="mt-6 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+          <button type="submit" className="mt-6 bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700">
             Submit Request
           </button>
         </form>

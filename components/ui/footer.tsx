@@ -330,6 +330,10 @@
 //   );
 // }
 
+
+
+
+// components\ui\footer.tsx
 "use client";
 
 import { useEffect, useState } from "react";
@@ -433,7 +437,7 @@ export default function Footer() {
             <div className="text-left md:text-left">
               <h6 className="text-xl font-bold mb-2">Contact us</h6>
               <p className="text-sm mb-4">
-                6500 Dublin Blvd., Ste.214(B)<br />
+                6500 Dublin Blvd., Ste.218<br />
                 Dublin, CA, 94568<br />
                 {/* +1 408-409-7900<br /> */}
                  <a className="text-md text-white duration-500 hover:text-blue-600 dark:text-white dark:hover:text-blue-600" href="tel:+19255571053">

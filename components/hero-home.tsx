@@ -70,7 +70,7 @@ export default function HeroHome() {
               className="text-center md:text-left md:min-w-[30rem]"
               data-aos="fade-right"
             >
-              <h1 className="h1 font-playfair-display text-slate-100 mb-4">
+              <h1 className="h1 font-times-new-roman text-slate-100 mb-4">
                 Reimagine Talent Management with the Power of AI
               </h1>
             </div>
@@ -80,13 +80,13 @@ export default function HeroHome() {
               className="text-center md:text-left space-y-6 max-w-xl"
               data-aos="fade-left"
             >
-              <p className="text-xl text-slate-400">
+              <p className="text-xl text-slate-400 font-times-new-roman">
                 Leverage Agentic AI, RAG, and Smart Chatbots to streamline
                 talent operations, enhance decision-making, and scale innovation
                 with precision and speed.
               </p>
               <div className="flex justify-center md:justify-start">
-                <Link
+                {/* <Link
                   className="btn text-sm text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-xl w-auto group transition duration-150 ease-in-out"
                   href="/"
                 >
@@ -94,7 +94,20 @@ export default function HeroHome() {
                   <span className="tracking-normal text-blue-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
                     -&gt;
                   </span>
-                </Link>
+                </Link> */ }
+
+                  
+                  <Link
+                    className="btn text-sm text-white bg-blue-600 hover:bg-blue-600 px-3 py-2 rounded-xl w-auto group transition duration-150 ease-in-out"
+                    href="/request-demo"
+                    // font-times-new-roman
+                  >
+                    Request Demo{" "}
+                    <span className="tracking-normal text-blue-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
+                      -&gt;
+                    </span>
+                  </Link>
+
               </div>
             </div>
           </div>

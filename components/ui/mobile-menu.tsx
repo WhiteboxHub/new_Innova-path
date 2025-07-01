@@ -312,7 +312,7 @@ export default function MobileMenu() {
           {/* Talent Showcase Dropdown */}
           <button
             onClick={() => setShowcaseOpen(!showcaseOpen)}
-            className="flex items-center justify-between text-gray-800 font-medium w-full focus:outline-none"
+            className="flex items-center justify-between text-gray-800  font-medium w-full focus:outline-none"
           >
             <span>Talent Showcase</span>
             {showcaseOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}

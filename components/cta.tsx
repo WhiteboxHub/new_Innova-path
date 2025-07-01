@@ -53,12 +53,12 @@ export default function Cta() {
 
             {/* Content */}
             <div className="relative">
-              <h3 className="text-3xl font-semibold text-black-800 mb-4 font-playfair-display">Powering the Future of Talent with AI</h3>
+              <h3 className="text-3xl font-semibold text-black-800 mb-4 font-times-new-roman">Powering the Future of Talent with AI</h3>
               <h4 className="text-xl mb-6 font-medium">
                 <span className="text-emerald-600">Innovapath’s AI:</span>{' '}
                 <span className="text-black-600">Designed to Enhance Human Potential</span>
               </h4>
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+              <p className="text-lg text-slate-600 font-times-new-roman mb-8 leading-relaxed">
                 We transform talent management through a powerful AI platform that combines Retrieval-Augmented Generation (RAG), intelligent AI agents, and conversational chatbots. Our solution automates workflows, delivers actionable insights, and fosters meaningful engagement—helping your teams work smarter and grow faster.
               </p>
 

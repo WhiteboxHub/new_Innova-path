@@ -179,7 +179,7 @@ export default function FeaturesHome02() {
 
           {/* Section header */}
           <div className="max-w-5xl mx-auto text-center pb-12 md:pb-15">
-            <h2 className="h2 font-playfair-display text-slate-800">Smart AI Agents for Every Stage of Talent Management</h2>
+            <h2 className="h2 font-times-new-roman text-slate-800">Smart AI Agents for Every Stage of Talent Management</h2>
             <p className="mt-4 text-lg text-slate-600">
              From hiring to growth and retention, our agents work behind the scenes to automate workflows, surface insights, and support every person on your team.
 

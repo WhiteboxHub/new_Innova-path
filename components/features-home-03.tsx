@@ -164,7 +164,7 @@ export default function IntelligentAutomation() {
               </div>
 
               {/* Heading */}
-              <h3 className="text-3xl lg:text-4xl font-semibold text-slate-800 mb-4">
+              <h3 className="text-3xl lg:text-4xl font-semibold font-times-new-roman text-slate-800 mb-4">
                 Empowered Performance Through AI
               </h3>
 

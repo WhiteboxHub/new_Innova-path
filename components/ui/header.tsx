@@ -295,7 +295,7 @@
 // }
 
 
-
+// components\ui\header.tsx
 'use client';
 
 import Link from 'next/link';
@@ -324,11 +324,12 @@ export default function Header({ mode = 'dark' }: { mode?: string }) {
           </div>
 
           {/*Talent Showcase Dropdown + Request Demo */}
-          <div className="hidden md:flex items-center ml-auto space-x-4">
+          <div className="hidden  md:flex items-center ml-auto space-x-4">
 
             <Dropdown
               title={
-                <span className="text-white text-xl font-bold tracking-wide leading-relaxed font-[Poppins] transition-colors duration-200">
+                // 
+                <span className=" text-white text-xl font-bold tracking-wide leading-relaxed font-times-new-roman transition-colors duration-200">
                   Talent Showcase
                 </span>
               }
@@ -339,12 +340,12 @@ export default function Header({ mode = 'dark' }: { mode?: string }) {
               >
                 Search Talent
               </Link>
-              <Link
+              {/* <Link
                 href="/talent-showcase/request-talent"
                 className="text-sm text-gray-800 hover:text-blue-600 font-medium flex py-2 px-5 leading-tight"
               >
                 Request Talent
-              </Link>
+              </Link> */}
             </Dropdown>
 
             <Link
